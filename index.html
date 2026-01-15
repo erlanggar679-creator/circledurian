@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+        <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle Durian Cengkareng | Durian Segar Jakarta Barat</title>
+    <title>Detail Menu - Circle Durian Cengkareng</title>
     
-    <meta name="description" content="Circle Durian adalah toko durian segar di Cengkareng Jakarta Barat. Buka jam 10 pagi - 10 malam. Menyediakan durian lokal premium, durian medan, montong. Order via WhatsApp.">
+    <meta name="description" content="Detail lengkap menu durian Circle Durian Cengkareng. Berbagai varian durian segar, olahan, dan paket spesial.">
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -21,9 +21,10 @@
             --dark-yellow: #ff9800;
             --dark: #1a1a1a;
             --light: #f8f9fa;
-            --gray: #6c757d;
             --white: #ffffff;
-            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --gradient-green-yellow: linear-gradient(135deg, #1a5d1a 0%, #ffd700 100%);
+            --gradient-yellow-green: linear-gradient(135deg, #ffd700 0%, #1a5d1a 100%);
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
         
@@ -37,426 +38,326 @@
             font-family: 'Poppins', sans-serif;
             line-height: 1.6;
             color: #333;
-            background-color: var(--light);
-            overflow-x: hidden;
+            background: linear-gradient(135deg, #f9fdf9 0%, #fff9e6 100%);
+            min-height: 100vh;
         }
         
-        /* ===== HEADER & HERO ===== */
-        header {
+        /* ===== HEADER ===== */
+        .menu-header {
             background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
             color: white;
-            padding: 1.5rem 2rem;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-        
-        .logo i {
-            color: var(--primary-yellow);
-            font-size: 1.8rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .nav-links a:hover {
-            color: var(--primary-yellow);
-        }
-        
-        .nav-links a:after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            background: var(--primary-yellow);
-            bottom: -5px;
-            left: 0;
-            transition: var(--transition);
-        }
-        
-        .nav-links a:hover:after {
-            width: 100%;
-        }
-        
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: white;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-        
-        .hero {
-            background: linear-gradient(rgba(26, 93, 26, 0.85), rgba(46, 139, 87, 0.9)), url('https://images.unsplash.com/photo-1586201375761-83865001e31c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            padding: 6rem 2rem;
+            padding: 2rem 2rem;
             text-align: center;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
         }
         
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeIn 1.2s ease;
+        .menu-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,215,0,0.1) 0%, transparent 70%);
         }
         
-        .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            font-weight: 800;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        .logo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
         }
         
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-        }
-        
-        .hero-badge {
-            display: inline-block;
+        .logo-circle {
+            width: 80px;
+            height: 80px;
             background: linear-gradient(135deg, var(--primary-yellow), var(--dark-yellow));
-            color: var(--primary-green);
-            padding: 0.8rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.2rem;
-            margin-top: 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid white;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
         
-        /* ===== SECTION STYLES ===== */
-        section {
-            padding: 5rem 2rem;
-        }
-        
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-        }
-        
-        .section-title h2 {
+        .logo-circle i {
             font-size: 2.5rem;
             color: var(--primary-green);
-            display: inline-block;
+        }
+        
+        .logo-text {
+            text-align: left;
+        }
+        
+        .logo-text h1 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .logo-text h1 span:first-child {
+            color: var(--primary-yellow);
+        }
+        
+        .logo-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+        
+        .menu-title {
             position: relative;
-            padding-bottom: 10px;
+            z-index: 2;
         }
         
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 70px;
-            height: 4px;
-            background: var(--primary-yellow);
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            border-radius: 2px;
+        .menu-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-yellow);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
         }
         
-        .section-title p {
-            color: var(--gray);
-            margin-top: 1rem;
-            font-size: 1.1rem;
+        .menu-title p {
+            font-size: 1.3rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.95;
         }
         
-        /* ===== ABOUT SECTION ===== */
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
+        /* ===== MAIN CONTENT ===== */
+        .menu-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
         }
         
-        .about-text {
+        .menu-category {
+            margin-bottom: 4rem;
             background: var(--white);
-            padding: 2.5rem;
-            border-radius: 16px;
+            border-radius: 20px;
+            overflow: hidden;
             box-shadow: var(--shadow);
             position: relative;
         }
         
-        .about-text:before {
+        .category-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 2rem;
+            position: relative;
+        }
+        
+        .category-header:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath fill='rgba(255,255,255,0.1)' d='M0,0 L100,0 L100,100 L0,100 Z'/%3E%3C/svg%3E");
+        }
+        
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--primary-yellow), var(--dark-yellow));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .category-icon i {
+            font-size: 2rem;
+            color: var(--primary-green);
+        }
+        
+        .category-header h3 {
+            font-size: 2.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+        }
+        
+        .menu-items {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            padding: 2.5rem;
+        }
+        
+        .menu-item-card {
+            background: #f9fdf9;
+            border-radius: 15px;
+            padding: 1.8rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-item-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+            border-color: var(--accent-green);
+        }
+        
+        .menu-item-card:before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            width: 6px;
+            width: 5px;
             height: 100%;
-            background: linear-gradient(to bottom, var(--primary-green), var(--primary-yellow));
-            border-radius: 6px 0 0 6px;
+            background: linear-gradient(to bottom, var(--primary-yellow), var(--light-green));
         }
         
-        .about-text h3 {
-            color: var(--primary-green);
-            margin-bottom: 1.5rem;
-            font-size: 1.8rem;
-        }
-        
-        .info-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        .info-card {
-            background: #f9fdf9;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid var(--accent-green);
-            transition: var(--transition);
-        }
-        
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-        }
-        
-        .info-card i {
-            color: var(--primary-green);
-            font-size: 1.5rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .info-card h4 {
-            color: var(--primary-green);
-            margin-bottom: 0.5rem;
-        }
-        
-        .about-image {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            height: 500px;
-            background: linear-gradient(45deg, var(--primary-yellow), var(--light-green));
+        .item-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--light-green), var(--accent-green));
+            border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: var(--primary-green);
-            font-size: 2rem;
-            font-weight: 700;
-        }
-        
-        /* ===== MENU SECTION ===== */
-        .menu-section {
-            background: linear-gradient(135deg, #f9fdf9 0%, #f1f8e9 100%);
-        }
-        
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-        
-        .menu-card {
-            background: var(--white);
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: var(--transition);
-            position: relative;
-        }
-        
-        .menu-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-        }
-        
-        .menu-card-header {
-            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            margin-bottom: 1rem;
             color: white;
-            padding: 1.5rem;
-            text-align: center;
-        }
-        
-        .menu-card-header h3 {
             font-size: 1.5rem;
-            margin-bottom: 0.5rem;
         }
         
-        .menu-card-body {
-            padding: 2rem;
-        }
-        
-        .menu-item {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 1.2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px dashed #e0e0e0;
-        }
-        
-        .menu-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        
-        .menu-item-name {
-            font-weight: 600;
+        .menu-item-card h4 {
+            font-size: 1.5rem;
             color: var(--primary-green);
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
         
-        .menu-item-price {
-            color: var(--dark-yellow);
-            font-weight: 700;
-        }
-        
-        .menu-badge {
-            position: absolute;
-            top: 15px;
-            right: -30px;
+        .menu-item-card h4 .item-badge {
             background: var(--primary-yellow);
             color: var(--primary-green);
-            padding: 0.3rem 2.5rem;
+            font-size: 0.8rem;
+            padding: 3px 10px;
+            border-radius: 20px;
             font-weight: 700;
-            font-size: 0.9rem;
-            transform: rotate(45deg);
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
         }
         
-        /* ===== OPERATIONAL HOURS ===== */
-        .hours-section {
-            background: linear-gradient(135deg, var(--primary-green) 0%, var(--secondary-green) 100%);
-            color: white;
+        .item-description {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 1rem;
         }
         
-        .hours-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-        
-        .hours-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 16px;
-            padding: 3rem;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        
-        .hours-card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            text-align: center;
-            color: var(--primary-yellow);
-        }
-        
-        .hours-list {
+        .item-features {
             list-style: none;
+            margin-top: 1.2rem;
         }
         
-        .hours-list li {
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .hours-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .day {
-            font-weight: 500;
-        }
-        
-        .time {
-            font-weight: 700;
-            color: var(--primary-yellow);
-        }
-        
-        .note {
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 10px;
-            text-align: center;
-            font-style: italic;
-        }
-        
-        .hours-image {
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-            height: 400px;
-            background: linear-gradient(45deg, var(--primary-yellow), var(--light-green));
+        .item-features li {
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
-            justify-content: center;
+            gap: 8px;
+            color: #666;
+        }
+        
+        .item-features li i {
+            color: var(--accent-green);
+        }
+        
+        .item-note {
+            margin-top: 1rem;
+            padding: 0.8rem;
+            background: rgba(139, 195, 74, 0.1);
+            border-radius: 10px;
+            font-size: 0.9rem;
             color: var(--primary-green);
-            font-size: 1.8rem;
-            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .item-note i {
+            color: var(--dark-yellow);
+        }
+        
+        /* ===== SPECIAL CATEGORY ===== */
+        .special-category {
+            border: 3px solid var(--primary-yellow);
+        }
+        
+        .special-category .category-header {
+            background: linear-gradient(135deg, var(--dark-yellow), var(--primary-yellow));
+        }
+        
+        .special-category .category-icon {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+        }
+        
+        .special-category .category-icon i {
+            color: var(--primary-yellow);
         }
         
         /* ===== CTA SECTION ===== */
-        .cta-section {
-            text-align: center;
+        .menu-cta {
             background: linear-gradient(135deg, var(--primary-yellow) 0%, var(--dark-yellow) 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 2rem;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .menu-cta:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(26,93,26,0.1) 0%, transparent 70%);
+        }
+        
+        .menu-cta-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .menu-cta h3 {
+            font-size: 2.2rem;
             color: var(--primary-green);
-        }
-        
-        .cta-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .cta-container h2 {
-            font-size: 2.5rem;
             margin-bottom: 1rem;
         }
         
-        .cta-container p {
+        .menu-cta p {
             font-size: 1.2rem;
-            margin-bottom: 2.5rem;
+            color: var(--primary-green);
+            margin-bottom: 2rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-buttons {
             display: flex;
             justify-content: center;
-            flex-wrap: wrap;
             gap: 1.5rem;
-            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         .btn {
@@ -479,106 +380,51 @@
             color: white;
         }
         
-        .btn-instagram {
-            background: linear-gradient(45deg, #405DE6, #833AB4, #C13584, #E1306C, #FD1D1D);
-            color: white;
-        }
-        
-        .btn-maps {
+        .btn-call {
             background: var(--primary-green);
             color: white;
         }
         
-        .btn-call {
-            background: var(--white);
-            color: var(--primary-green);
+        .btn-instagram {
+            background: linear-gradient(45deg, #405DE6, #833AB4);
+            color: white;
         }
         
         .btn:hover {
-            transform: translateY(-5px);
+            transform: translateY(-5px) scale(1.05);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
         }
         
         /* ===== FOOTER ===== */
-        footer {
+        .menu-footer {
             background: var(--dark);
             color: #ccc;
-            padding: 3rem 2rem 1.5rem;
+            padding: 2rem 2rem 1rem;
+            text-align: center;
+            margin-top: 3rem;
         }
         
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 3rem;
-        }
-        
-        .footer-column h4 {
-            color: white;
-            margin-bottom: 1.5rem;
-            font-size: 1.2rem;
-            position: relative;
-            padding-bottom: 10px;
-        }
-        
-        .footer-column h4:after {
-            content: '';
-            position: absolute;
-            width: 40px;
-            height: 3px;
-            background: var(--primary-yellow);
-            bottom: 0;
-            left: 0;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .footer-links a {
-            color: #aaa;
-            text-decoration: none;
-            transition: var(--transition);
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary-yellow);
-            padding-left: 5px;
-        }
-        
-        .social-links {
+        .footer-logo {
             display: flex;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .social-links a {
-            display: inline-flex;
-            align-items: center;
             justify-content: center;
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            color: white;
-            text-decoration: none;
-            transition: var(--transition);
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1.5rem;
         }
         
-        .social-links a:hover {
-            background: var(--primary-yellow);
-            color: var(--primary-green);
-            transform: translateY(-3px);
+        .footer-logo i {
+            color: var(--primary-yellow);
+            font-size: 1.8rem;
+        }
+        
+        .footer-logo span {
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: white;
         }
         
         .copyright {
-            text-align: center;
-            margin-top: 3rem;
+            margin-top: 1.5rem;
             padding-top: 1.5rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #888;
@@ -591,78 +437,72 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        @keyframes fadeInLeft {
-            from { opacity: 0; transform: translateX(-30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
-        @keyframes fadeInRight {
-            from { opacity: 0; transform: translateX(30px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-        
         .fade-in {
-            animation: fadeIn 1s ease;
+            animation: fadeIn 0.8s ease forwards;
         }
         
-        .fade-in-left {
-            animation: fadeInLeft 1s ease;
+        .fade-in-delay-1 {
+            animation: fadeIn 0.8s ease 0.2s forwards;
+            opacity: 0;
         }
         
-        .fade-in-right {
-            animation: fadeInRight 1s ease;
+        .fade-in-delay-2 {
+            animation: fadeIn 0.8s ease 0.4s forwards;
+            opacity: 0;
         }
         
         /* ===== RESPONSIVE ===== */
         @media (max-width: 992px) {
-            .about-content, .hours-container {
-                grid-template-columns: 1fr;
+            .menu-items {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             }
             
-            .footer-container {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .hero h1 {
-                font-size: 2.8rem;
+            .logo-text h1 {
+                font-size: 2.3rem;
             }
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: var(--primary-green);
+            .menu-header {
+                padding: 1.5rem 1rem;
+            }
+            
+            .logo-container {
                 flex-direction: column;
-                padding: 1.5rem;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                text-align: center;
             }
             
-            .nav-links.active {
-                display: flex;
+            .logo-text {
+                text-align: center;
             }
             
-            .mobile-menu-btn {
-                display: block;
+            .logo-text h1 {
+                font-size: 2rem;
             }
             
-            .info-grid {
-                grid-template-columns: 1fr;
+            .menu-title h2 {
+                font-size: 2rem;
             }
             
-            .menu-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
+            .menu-title p {
                 font-size: 1.1rem;
+            }
+            
+            .menu-container {
+                padding: 2rem 1rem;
+            }
+            
+            .menu-items {
+                grid-template-columns: 1fr;
+                padding: 1.5rem;
+            }
+            
+            .category-header {
+                padding: 1.5rem;
+            }
+            
+            .category-header h3 {
+                font-size: 1.8rem;
             }
             
             .cta-buttons {
@@ -678,20 +518,16 @@
         }
         
         @media (max-width: 576px) {
-            section {
-                padding: 3rem 1rem;
+            .menu-title h2 {
+                font-size: 1.8rem;
             }
             
-            .section-title h2 {
-                font-size: 2rem;
+            .menu-cta h3 {
+                font-size: 1.8rem;
             }
             
-            .footer-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .hero {
-                padding: 4rem 1rem;
+            .menu-cta p {
+                font-size: 1rem;
             }
         }
     </style>
@@ -699,306 +535,333 @@
 
 <body>
     <!-- HEADER -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
+    <header class="menu-header">
+        <div class="logo-container fade-in">
+            <div class="logo-circle">
                 <i class="fas fa-dragon"></i>
-                <span>Circle Durian</span>
             </div>
-            
-            <nav>
-                <button class="mobile-menu-btn" id="mobileMenuBtn">
-                    <i class="fas fa-bars"></i>
-                </button>
-                <div class="nav-links" id="navLinks">
-                    <a href="#home">Beranda</a>
-                    <a href="#about">Tentang</a>
-                    <a href="#menu">Menu</a>
-                    <a href="#hours">Jam Buka</a>
-                    <a href="#contact">Kontak</a>
-                </div>
-            </nav>
+            <div class="logo-text">
+                <h1><span>Circle</span> <span>Durian</span></h1>
+                <p>Cengkareng, Jakarta Barat</p>
+            </div>
+        </div>
+        
+        <div class="menu-title fade-in-delay-1">
+            <h2>DETAIL MENU LENGKAP</h2>
+            <p>Berbagai varian durian segar dan olahan premium dengan kualitas terbaik</p>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
-        <div class="hero-content">
-            <h1>Circle Durian Cengkareng</h1>
-            <p>Durian Segar • Manis • Legit • Tidak Zonk</p>
-            <div class="hero-badge fade-in">
-                <i class="fas fa-clock"></i> BUKA 10:00 - 22:00 WIB
-            </div>
-        </div>
-    </section>
-
-    <!-- ABOUT SECTION -->
-    <section id="about">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Tentang Circle Durian</h2>
-                <p>Durian pilihan dengan kualitas terbaik di Jakarta Barat</p>
+    <!-- MAIN CONTENT -->
+    <main class="menu-container">
+        <!-- DURIAN SEGAR -->
+        <section class="menu-category fade-in">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-apple-alt"></i>
+                </div>
+                <h3>DURIAN SEGAR UTUH</h3>
+                <p>Durian pilihan langsung dari kebun dengan kualitas premium, daging tebal, dan rasa manis legit</p>
             </div>
             
-            <div class="about-content">
-                <div class="about-text fade-in-left">
-                    <h3>Durian Segar & Berkualitas</h3>
-                    <p><strong>Circle Durian</strong> adalah toko durian segar di <strong>Cengkareng, Jakarta Barat</strong>. Kami menyediakan durian pilihan langsung dari kebun dengan rasa manis legit, cocok untuk pecinta durian, makan rame-rame, dan oleh-oleh.</p>
-                    <p>Dengan pengalaman lebih dari 5 tahun, kami selalu memastikan setiap buah durian yang kami jual memiliki kualitas terbaik, daging tebal, dan rasa yang tidak mengecewakan.</p>
-                    
-                    <div class="info-grid">
-                        <div class="info-card">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <h4>Alamat</h4>
-                            <p>Ruko Taman Palem Blok A5 No.15, Cengkareng, Jakarta Barat</p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <i class="fas fa-phone-alt"></i>
-                            <h4>Telepon</h4>
-                            <p>+62 823-1144-0610</p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <i class="fas fa-shipping-fast"></i>
-                            <h4>Pengiriman</h4>
-                            <p>Grab, Gojek, dan Antar Jemput Area Jakarta</p>
-                        </div>
-                        
-                        <div class="info-card">
-                            <i class="fas fa-award"></i>
-                            <h4>Garansi</h4>
-                            <p>Garansi Tidak Zonk & Uang Kembali</p>
-                        </div>
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-crown"></i>
                     </div>
-                </div>
-                
-                <div class="about-image fade-in-right">
-                    <div style="text-align: center; padding: 2rem;">
-                        <i class="fas fa-dragon" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                        <p>Circle Durian</p>
-                        <p style="font-size: 1.5rem; margin-top: 1rem;">Cengkareng</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- MENU SECTION -->
-    <section class="menu-section" id="menu">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Menu Durian</h2>
-                <p>Pilihan durian segar dan olahan premium</p>
-            </div>
-            
-            <div class="menu-grid">
-                <!-- Durian Segar -->
-                <div class="menu-card fade-in">
-                    <div class="menu-card-header">
-                        <h3><i class="fas fa-apple-alt"></i> Durian Segar</h3>
-                        <p>Pilihan buah utuh segar</p>
-                    </div>
-                    <div class="menu-card-body">
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Lokal Premium</div>
-                            <div class="menu-item-price">Rp 85.000/kg</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Medan Asli</div>
-                            <div class="menu-item-price">Rp 120.000/kg</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Montong Thailand</div>
-                            <div class="menu-item-price">Rp 150.000/kg</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Musang King</div>
-                            <div class="menu-item-price">Rp 250.000/kg</div>
-                        </div>
-                    </div>
-                    <div class="menu-badge">HIT</div>
-                </div>
-                
-                <!-- Olahan & Kupasan -->
-                <div class="menu-card fade-in" style="animation-delay: 0.2s;">
-                    <div class="menu-card-header">
-                        <h3><i class="fas fa-utensils"></i> Olahan & Kupasan</h3>
-                        <p>Siap santap langsung</p>
-                    </div>
-                    <div class="menu-card-body">
-                        <div class="menu-item">
-                            <div class="menu-item-name">Daging Durian Cup (250gr)</div>
-                            <div class="menu-item-price">Rp 45.000</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Kupas Premium</div>
-                            <div class="menu-item-price">Rp 180.000/kg</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Durian Frozen (500gr)</div>
-                            <div class="menu-item-price">Rp 75.000</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Es Durian Special</div>
-                            <div class="menu-item-price">Rp 35.000</div>
-                        </div>
-                    </div>
-                    <div class="menu-badge">FAV</div>
-                </div>
-                
-                <!-- Paket Favorit -->
-                <div class="menu-card fade-in" style="animation-delay: 0.4s;">
-                    <div class="menu-card-header">
-                        <h3><i class="fas fa-gift"></i> Paket Favorit</h3>
-                        <p>Paket hemat untuk keluarga</p>
-                    </div>
-                    <div class="menu-card-body">
-                        <div class="menu-item">
-                            <div class="menu-item-name">Paket Hemat Circle (2-3 orang)</div>
-                            <div class="menu-item-price">Rp 200.000</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Paket Rame Circle (5-7 orang)</div>
-                            <div class="menu-item-price">Rp 450.000</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Paket Luxury Circle</div>
-                            <div class="menu-item-price">Rp 750.000</div>
-                        </div>
-                        <div class="menu-item">
-                            <div class="menu-item-name">Paket By Request</div>
-                            <div class="menu-item-price">Hubungi Kami</div>
-                        </div>
-                    </div>
-                    <div class="menu-badge">PAKET</div>
-                </div>
-            </div>
-            
-            <p style="text-align: center; margin-top: 2rem; font-style: italic; color: var(--gray);">
-                <i class="fas fa-info-circle"></i> Harga dapat berubah sesuai musim dan ketersediaan stok
-            </p>
-        </div>
-    </section>
-
-    <!-- OPERATIONAL HOURS -->
-    <section class="hours-section" id="hours">
-        <div class="section-container">
-            <div class="section-title">
-                <h2 style="color: white;">Jam Operasional</h2>
-                <p style="color: rgba(255, 255, 255, 0.8);">Kami siap melayani Anda</p>
-            </div>
-            
-            <div class="hours-container">
-                <div class="hours-card fade-in-left">
-                    <h3><i class="fas fa-clock"></i> Jam Buka Toko</h3>
-                    <ul class="hours-list">
-                        <li>
-                            <span class="day">Senin - Kamis</span>
-                            <span class="time">10:00 - 22:00</span>
-                        </li>
-                        <li>
-                            <span class="day">Jumat</span>
-                            <span class="time">10:00 - 21:00</span>
-                        </li>
-                        <li>
-                            <span class="day">Sabtu</span>
-                            <span class="time">09:00 - 23:00</span>
-                        </li>
-                        <li>
-                            <span class="day">Minggu & Hari Libur</span>
-                            <span class="time">09:00 - 23:00</span>
-                        </li>
+                    <h4>Durian Musang King <span class="item-badge">PREMIUM</span></h4>
+                    <p class="item-description">Durian premium dengan daging kuning keemasan, tekstur lembut seperti krim, dan rasa manis pahit yang khas.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Asli Malaysia</li>
+                        <li><i class="fas fa-check-circle"></i> Daging kering & tebal</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa kompleks manis-pahit</li>
+                        <li><i class="fas fa-check-circle"></i> Bijinya kecil</li>
                     </ul>
+                    <div class="item-note">
+                        <i class="fas fa-star"></i> Varian paling premium dengan cita rasa terbaik
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-fire"></i>
+                    </div>
+                    <h4>Durian Montong Thailand <span class="item-badge">IMPORT</span></h4>
+                    <p class="item-description">Durian import dari Thailand dengan ukuran besar, daging kuning pucat, dan rasa manis lembut.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Import langsung Thailand</li>
+                        <li><i class="fas fa-check-circle"></i> Ukuran buah besar</li>
+                        <li><i class="fas fa-check-circle"></i> Daging lembut & creamy</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa manis natural</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-globe-asia"></i> Import langsung dari perkebunan Thailand
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h4>Durian Medan Asli <span class="item-badge">ORIGINAL</span></h4>
+                    <p class="item-description">Durian khas Sumatera Utara dengan aroma kuat, daging kuning cerah, dan rasa legit yang khas.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Asli Medan, Sumatera</li>
+                        <li><i class="fas fa-check-circle"></i> Aroma khas menyengat</li>
+                        <li><i class="fas fa-check-circle"></i> Daging kuning cerah</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa manis legit</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-leaf"></i> Durian dengan aroma khas yang kuat
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <h4>Durian Lokal Premium <span class="item-badge">FAVORIT</span></h4>
+                    <p class="item-description">Durian lokal pilihan dengan kualitas terbaik dari kebun Jawa, rasa manis dan tekstur creamy.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Dari kebun Jawa terbaik</li>
+                        <li><i class="fas fa-check-circle"></i> Kualitas premium</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa manis konsisten</li>
+                        <li><i class="fas fa-check-circle"></i> Daging tebal & lembut</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-heart"></i> Pilihan terbaik dengan harga terjangkau
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- OLAHAN DURIAN -->
+        <section class="menu-category fade-in-delay-1">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <h3>OLAHAN & SIAP SANTAP</h3>
+                <p>Berbagai olahan durian siap santap dengan racikan khusus dari Circle Durian</p>
+            </div>
+            
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h4>Daging Durian Cup Premium <span class="item-badge">SIAP SANTAP</span></h4>
+                    <p class="item-description">Daging durian pilihan yang sudah dikupas dan dikemas dalam cup higienis, siap santap langsung.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Daging durian pilihan</li>
+                        <li><i class="fas fa-check-circle"></i> Kemasan cup higienis</li>
+                        <li><i class="fas fa-check-circle"></i> Siap santap langsung</li>
+                        <li><i class="fas fa-check-circle"></i> Tanpa biji</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-box"></i> Tersedia ukuran 250gr dan 500gr
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-snowflake"></i>
+                    </div>
+                    <h4>Durian Kupas Frozen <span class="item-badge">BEKU PREMIUM</span></h4>
+                    <p class="item-description">Daging durian segar yang dibekukan dengan teknologi blast freezer untuk menjaga kesegaran.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Dibekukan secara instan</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa & aroma tetap terjaga</li>
+                        <li><i class="fas fa-check-circle"></i> Tahan lama</li>
+                        <li><i class="fas fa-check-circle"></i> Siap olah kapan saja</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-temperature-low"></i> Cocok untuk stok atau bahan olahan
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-ice-cream"></i>
+                    </div>
+                    <h4>Es Durian Special <span class="item-badge">MINUMAN</span></h4>
+                    <p class="item-description">Minuman es durian segar dengan campuran susu, gula aren, dan potongan daging durian asli.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Dengan daging durian asli</li>
+                        <li><i class="fas fa-check-circle"></i> Susu segar pilihan</li>
+                        <li><i class="fas fa-check-circle"></i> Gula aren asli</li>
+                        <li><i class="fas fa-check-circle"></i> Disajikan dingin</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-glass-whiskey"></i> Minuman penyegar khas Circle Durian
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-blender"></i>
+                    </div>
+                    <h4>Puree Durian <span class="item-badge">BAHAN OLAHAN</span></h4>
+                    <p class="item-description">Durian yang sudah dihaluskan menjadi puree, siap digunakan untuk bahan kue, roti, atau dessert.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Tekstur halus lembut</li>
+                        <li><i class="fas fa-check-circle"></i> Tanpa bahan pengawet</li>
+                        <li><i class="fas fa-check-circle"></i> Siap untuk bahan kue</li>
+                        <li><i class="fas fa-check-circle"></i> Rasa alami durian</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-birthday-cake"></i> Cocok untuk bahan kue, roti, atau dessert
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- PAKET SPESIAL -->
+        <section class="menu-category special-category fade-in-delay-2">
+            <div class="category-header">
+                <div class="category-icon">
+                    <i class="fas fa-gift"></i>
+                </div>
+                <h3>PAKET SPESIAL CIRCLE DURIAN</h3>
+                <p>Paket hemat dengan kombinasi terbaik untuk berbagai kebutuhan</p>
+            </div>
+            
+            <div class="menu-items">
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-user-friends"></i>
+                    </div>
+                    <h4>Paket Hemat Circle <span class="item-badge">2-3 ORANG</span></h4>
+                    <p class="item-description">Paket pas untuk 2-3 orang dengan kombinasi durian lokal premium dan minuman es durian.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Durian lokal premium (1 buah)</li>
+                        <li><i class="fas fa-check-circle"></i> Es durian special (2 gelas)</li>
+                        <li><i class="fas fa-check-circle"></i> Air mineral botol</li>
+                        <li><i class="fas fa-check-circle"></i> Alat makan lengkap</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-users"></i> Cocok untuk keluarga kecil atau pasangan
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h4>Paket Rame Circle <span class="item-badge">5-7 ORANG</span></h4>
+                    <p class="item-description">Paket lengkap untuk acara keluarga atau kumpul bersama teman dengan pilihan durian beragam.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Durian lokal premium (2 buah)</li>
+                        <li><i class="fas fa-check-circle"></i> Durian Medan (1 buah)</li>
+                        <li><i class="fas fa-check-circle"></i> Es durian special (5 gelas)</li>
+                        <li><i class="fas fa-check-circle"></i> Daging durian cup premium</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-glass-cheers"></i> Sempurna untuk acara keluarga atau arisan
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-crown"></i>
+                    </div>
+                    <h4>Paket Luxury Circle <span class="item-badge">PREMIUM</span></h4>
+                    <p class="item-description">Paket eksklusif dengan durian varian premium untuk acara spesial atau sebagai hadiah.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Durian Musang King (1 buah)</li>
+                        <li><i class="fas fa-check-circle"></i> Durian Montong (1 buah)</li>
+                        <li><i class="fas fa-check-circle"></i> Daging durian cup premium (3 cup)</li>
+                        <li><i class="fas fa-check-circle"></i> Puree durian (1 pack)</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-gem"></i> Paket eksklusif untuk acara spesial atau hadiah
+                    </div>
+                </div>
+                
+                <div class="menu-item-card">
+                    <div class="item-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4>Paket By Request <span class="item-badge">CUSTOM</span></h4>
+                    <p class="item-description">Paket khusus sesuai permintaan untuk acara besar, catering, atau kebutuhan spesial lainnya.</p>
+                    <ul class="item-features">
+                        <li><i class="fas fa-check-circle"></i> Kombinasi sesuai permintaan</li>
+                        <li><i class="fas fa-check-circle"></i> Untuk acara besar & catering</li>
+                        <li><i class="fas fa-check-circle"></i> Konsultasi gratis</li>
+                        <li><i class="fas fa-check-circle"></i> Pengiriman khusus</li>
+                    </ul>
+                    <div class="item-note">
+                        <i class="fas fa-headset"></i> Hubungi kami untuk konsultasi paket custom
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- CTA SECTION -->
+        <section class="menu-cta fade-in-delay-2">
+            <div class="menu-cta-content">
+                <h3>Ingin Tahu Harga & Pesan Sekarang?</h3>
+                <p>Hubungi kami via WhatsApp untuk informasi harga terbaru, konsultasi pemilihan durian, atau pemesanan langsung. Kami siap melayani Anda!</p>
+                
+                <div class="cta-buttons">
+                    <a href="https://wa.me/6282311440610?text=Halo%20Circle%20Durian,%20saya%20ingin%20tanya%20harga%20dan%20pesan%20durian" class="btn btn-whatsapp" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Untuk Info Harga
+                    </a>
                     
-                    <div class="note">
-                        <p><i class="fas fa-exclamation-circle"></i> Pesanan online diterima 24 jam via WhatsApp</p>
-                    </div>
+                    <a href="tel:+6282311440610" class="btn btn-call">
+                        <i class="fas fa-phone-alt"></i> Telepon Langsung
+                    </a>
+                    
+                    <a href="https://instagram.com/circledurian" class="btn btn-instagram" target="_blank">
+                        <i class="fab fa-instagram"></i> Lihat Gallery Instagram
+                    </a>
                 </div>
                 
-                <div class="hours-image fade-in-right">
-                    <div style="text-align: center; color: white;">
-                        <i class="fas fa-store" style="font-size: 4rem; margin-bottom: 1rem;"></i>
-                        <p>BUKA SETIAP HARI</p>
-                        <p style="font-size: 2.5rem; margin-top: 1rem;">10:00 - 22:00</p>
-                        <p style="font-size: 1.2rem; margin-top: 1rem;">Durian Segar Menanti Anda</p>
-                    </div>
+                <div style="margin-top: 2rem; background: rgba(255, 255, 255, 0.3); padding: 1rem; border-radius: 10px;">
+                    <p style="color: var(--primary-green); font-weight: 600; margin: 0;">
+                        <i class="fas fa-bolt"></i> LAYANAN CEPAT: Pesanan diambil/diantar hari yang sama • Garansi tidak zonk • Konsultasi gratis pemilihan durian
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- CTA SECTION -->
-    <section class="cta-section" id="contact">
-        <div class="cta-container">
-            <h2>Pesan Durian Sekarang</h2>
-            <p>Klik tombol di bawah untuk pemesanan cepat via WhatsApp atau kunjungi toko kami langsung</p>
-            
-            <div class="cta-buttons">
-                <a href="https://wa.me/6282311440610?text=Halo%20Circle%20Durian,%20saya%20ingin%20pesan%20durian" class="btn btn-whatsapp" target="_blank">
-                    <i class="fab fa-whatsapp"></i> WhatsApp Order
-                </a>
-                
-                <a href="https://instagram.com/circledurian" class="btn btn-instagram" target="_blank">
-                    <i class="fab fa-instagram"></i> Instagram
-                </a>
-                
-                <a href="https://www.google.com/maps/search/Circle+Durian+Cengkareng+Jakarta+Barat" class="btn btn-maps" target="_blank">
-                    <i class="fas fa-map-marked-alt"></i> Google Maps
-                </a>
-                
-                <a href="tel:+6282311440610" class="btn btn-call">
-                    <i class="fas fa-phone-alt"></i> Telepon Sekarang
-                </a>
-            </div>
-            
-            <div style="margin-top: 3rem; background: rgba(255, 255, 255, 0.2); padding: 1.5rem; border-radius: 12px;">
-                <h3 style="margin-bottom: 1rem;"><i class="fas fa-bolt"></i> Layanan Cepat</h3>
-                <p>Pesanan di atas Rp 300.000 gratis ongkir area Cengkareng • Pembayaran cash, transfer, QRIS, atau e-wallet</p>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- FOOTER -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-column">
-                <h4>Circle Durian</h4>
-                <p>Toko durian segar dengan kualitas terbaik di Cengkareng, Jakarta Barat. Berpengalaman sejak 2018.</p>
-                <div class="social-links">
-                    <a href="https://instagram.com/circledurian" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                    <a href="https://wa.me/6282311440610" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
+    <footer class="menu-footer">
+        <div class="footer-logo">
+            <i class="fas fa-dragon"></i>
+            <span>Circle Durian</span>
+        </div>
+        
+        <p>Ruko Taman Palem Blok A5 No.15, Cengkareng, Jakarta Barat</p>
+        <p>Buka Setiap Hari: 10:00 - 22:00 WIB</p>
+        
+        <div class="copyright">
+            <p>&copy; 2023 Circle Durian Cengkareng. Semua hak dilindungi.</p>
+            <p>Website: circledurian.com | Email: circledurian@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        // Animasi saat scroll
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in, .fade-in-delay-1, .fade-in-delay-2');
             
-            <div class="footer-column">
-                <h4>Menu</h4>
-                <ul class="footer-links">
-                    <li><a href="#menu">Durian Segar</a></li>
-                    <li><a href="#menu">Durian Kupas</a></li>
-                    <li><a href="#menu">Durian Frozen</a></li>
-                    <li><a href="#menu">Paket Hemat</a></li>
-                    <li><a href="#menu">Paket Rame</a></li>
-                </ul>
-            </div>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
             
-            <div class="footer-column">
-                <h4>Informasi</h4>
-                <ul class="footer-links">
-                    <li><a href="#about">Tentang Kami</a></li>
-                    <li><a href="#hours">Jam Buka</a></li>
-                    <li><a href="#contact">Kontak & Lokasi</a></li>
-                    <li><a href="#contact">Cara Pesan</a></li>
-                    <li><a href="#contact">Garansi</a></li>
-                </ul>
-            </div>
-            
-            <div class="footer-column">
-                <h4>Kontak</h4>
-                <ul class="footer-links">
-                    <li><i class="fas fa-map-marker-alt"></i> Ruko Taman Palem A5/15</li>
-                    <li><i class="fas fa-phone"></i> +62 823-1144-0610</li>
-                    <li><i class="fas fa-envelope"></i> circledurian@gmail.com</li>
-                    <li><i class="fas fa-clock"></i> 10:00 - 
+            fadeElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+</html>                                        
