@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Circle Durian Cengkareng | Durian Segar Jakarta Barat</title>
+
+<meta name="description" content="Circle Durian adalah toko durian segar di Cengkareng Jakarta Barat. Menyediakan durian lokal premium, durian medan, montong. Order via WhatsApp.">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --green:#1b5e20;
+  --green-light:#43a047;
+  --dark:#1a1a1a;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background:#f5f7f6;
+  color:#333;
+  scroll-behavior:smooth;
+}
+
+/* ===== HERO ===== */
+.hero{
+  background:linear-gradient(135deg,var(--green),var(--green-light));
+  color:#fff;
+  padding:80px 20px;
+  text-align:center;
+  animation:fadeDown 1.2s ease;
+}
+.hero h1{
+  font-size:42px;
+  margin-bottom:10px;
+}
+.hero p{
+  font-size:18px;
+  opacity:.95;
+}
+
+/* ===== SECTION ===== */
+section{
+  padding:60px 20px;
+  max-width:1100px;
+  margin:auto;
+}
+h2{
+  color:var(--green);
+  margin-bottom:20px;
+  font-size:28px;
+}
+
+/* ===== CARD ===== */
+.card{
+  background:#fff;
+  border-radius:16px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,.08);
+  animation:fadeUp 1s ease;
+}
+
+/* ===== MENU GRID ===== */
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+.menu-box{
+  background:#f9fdf9;
+  border-radius:14px;
+  padding:20px;
+  transition:.3s;
+}
+.menu-box:hover{
+  transform:translateY(-6px);
+  box-shadow:0 10px 20px rgba(0,0,0,.1);
+}
+.menu-box h3{
+  margin-top:0;
+  color:var(--green);
+}
+
+/* ===== CTA ===== */
+.cta{
+  background:linear-gradient(135deg,var(--green-light),var(--green));
+  color:#fff;
+  text-align:center;
+  padding:70px 20px;
+}
+.cta a{
+  display:inline-block;
+  margin:12px;
+  padding:14px 26px;
+  background:#fff;
+  color:var(--green);
+  text-decoration:none;
+  font-weight:600;
+  border-radius:50px;
+  transition:.3s;
+}
+.cta a:hover{
+  transform:scale(1.05);
+  background:#e8f5e9;
+}
+
+/* ===== FOOTER ===== */
+footer{
+  background:var(--dark);
+  color:#ccc;
+  text-align:center;
+  padding:20px;
+  font-size:14px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+  .hero h1{font-size:32px}
+  h2{font-size:24px}
+}
+</style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>🍈 Circle Durian</h1>
+  <p>Durian Segar • Manis • Legit • Tidak Zonk</p>
+</div>
+
+<!-- ABOUT -->
+<section>
+  <div class="card">
+    <h2>Tentang Circle Durian</h2>
+    <p>
+      <strong>Circle Durian</strong> adalah toko durian segar di
+      <strong>Cengkareng, Jakarta Barat</strong>.
+      Kami menyediakan durian pilihan dengan rasa manis legit,
+      cocok untuk pecinta durian, makan rame-rame, dan oleh-oleh.
+    </p>
+    <p>
+      📍 <strong>Alamat:</strong><br>
+      Ruko Taman Palem Blok A5 No.15,<br>
+      Cengkareng, Jakarta Barat
+    </p>
+  </div>
+</section>
+
+<!-- MENU -->
+<section>
+  <h2>🍈 Daftar Menu</h2>
+  <div class="menu-grid">
+    <div class="menu-box">
+      <h3>Durian Segar</h3>
+      <ul>
+        <li>Durian Lokal Premium</li>
+        <li>Durian Medan</li>
+        <li>Durian Montong</li>
+      </ul>
+    </div>
+
+    <div class="menu-box">
+      <h3>Olahan & Kupasan</h3>
+      <ul>
+        <li>Daging Durian Cup</li>
+        <li>Durian Kupas Premium</li>
+        <li>Durian Frozen</li>
+      </ul>
+    </div>
+
+    <div class="menu-box">
+      <h3>Paket Favorit</h3>
+      <ul>
+        <li>Paket Hemat Circle</li>
+        <li>Paket Rame Circle</li>
+      </ul>
+    </div>
+  </div>
+
+  <p style="margin-top:15px"><em>*Harga & stok hubungi admin</em></p>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>📲 Order Online Sekarang</h2>
+  <p>Klik tombol di bawah untuk pemesanan cepat</p>
+
+  <a href="https://wa.me/6282311440610" target="_blank">
+    WhatsApp Order
+  </a>
+
+  <a href="https://instagram.com/circledurian" target="_blank">
+    Instagram
+  </a>
+
+  <a href="https://www.google.com/maps/search/Circle+Durian+Cengkareng" target="_blank">
+    Google Maps
+  </a>
+</section>
+
+<footer>
+  © 2026 Circle Durian • Durian Cengkareng Jakarta Barat
+</footer>
+
+</body>
+</html>
